@@ -32,7 +32,7 @@ if DEBUG:
 
 ltrs = set(word) 
 ltrsknown = set()
-tries = 6
+tries = len(hangmen) - 1
 
 print hangmen[-1] # print the first hangman
 while ltrs != ltrsknown and not tries == 0:
