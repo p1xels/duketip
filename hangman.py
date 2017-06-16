@@ -18,11 +18,11 @@ def get_hangman(n):
 	return hangmen[n]
 
 with open('words.txt', 'r') as file:
-    words = file.read().splitlines() # set words to list of lines in words.txt
+	words = file.read().splitlines() # set words to list of lines in words.txt
 
 with open('hanged.txt', 'r') as file:
-	hangmen = file.read().split('-#SPLIT#-')[::-1] 
-	# split hanged.txt by -#SPLIT#-, save to array, reverse array 
+	hangmen = file.read().split('-#SPLIT#-')[::-1]
+	# split hanged.txt by -#SPLIT#-, save to array, reverse array
 	# we reverse the array so it can be accessed by indexing the number of tries left
 
 word = random.choice(words)
