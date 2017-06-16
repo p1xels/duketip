@@ -7,7 +7,7 @@ def filter_string(word,lst):
 	# Create a regex that matches every letter not 
 	# in lst, and filter the word based on it.
 	if len(lst):
-		return re.sub(r'[^#'+''.join(lst)+r']', '_', word)
+		return re.sub(r'[^#'+''.join(lst)+r']', '_', word, flags=re.IGNORECASE)
 	else:
 		return '_' * len(word) # ew
 		
@@ -37,7 +37,7 @@ tries = 6
 print hangmen[-1] # print the first hangman
 while ltrs != ltrsknown and not tries == 0:
 	print "Word: %s | Tries: %d" % (filter_string(word, ltrsknown), tries)
-	i = raw_input('> ').strip()
+	i = raw_input('> ').strip().lower()
 	if not len(i) or not i.isalpha(): 
 		print "Please enter a letter."
 		continue
